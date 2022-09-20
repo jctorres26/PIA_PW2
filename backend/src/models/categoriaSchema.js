@@ -2,7 +2,10 @@ const mongoose = require('mongoose');
 
 const CategoriaSchema = mongoose.Schema({
     descripcion: {
-        type: String
+        type: String,
+        required: true,
+        minlength: 10,
+        maxLength:500,
     }
 });
 

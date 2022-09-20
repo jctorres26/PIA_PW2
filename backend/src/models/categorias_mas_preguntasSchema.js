@@ -10,6 +10,7 @@ const Categorias_mas_preguntasSchema = mongoose.Schema({
     
     ,
     id_categoria: [{
+        required: true,
         type: mongoose.Schema.Types.ObjectId,
         ref: "categoria"
     }]

@@ -2,32 +2,44 @@ const mongoose = require('mongoose');
 
 const PreguntaSchema = mongoose.Schema({
     titulo: {
-        type: String
+        type: String,
+        required: true,
+        minlength: 10,
+        maxLength:120
     },
     descripcion: {
-        type: String
+        type: String,
+        required: true,
+        minlength: 10,
+        maxLength:500
     },
     respondida: {
-        type: Boolean
+        type: Boolean,
+        required: true
     },
     fecha_publicacion: {
-        type: Date
+        type: Date,
+        required: true
     },
    
     cantidad_likes: {
-        type: Number
+        type: Number,
+        minlength: 0,
     }
     ,
     cantidad_dislikes: {
-        type: Number
+        type: Number,
+        minlength: 0,
     }
     ,
     id_usuario: [{
+        required: true,
         type: mongoose.Schema.Types.ObjectId,
         ref: "usuario"
     }]
     ,
     id_categoria: [{
+        required: true,
         type: mongoose.Schema.Types.ObjectId,
         ref: "categoria"
     }]

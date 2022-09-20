@@ -3,14 +3,18 @@ const mongoose = require('mongoose');
 
 const Mes_mas_preguntasSchema = mongoose.Schema({
     num_mes: {
-        type: Number
+        type: Number,
+        required: true
+
     },
     num_anio: {
-        type: Number
+        type: Number,
+        required: true
     }
     ,
     preguntas_realizadas: {
-        type: Number
+        type: Number,
+        required: true
     }
     
 });

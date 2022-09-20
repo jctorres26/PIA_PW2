@@ -5,10 +5,12 @@ const Preguntas_mas_likesSchema = mongoose.Schema({
 
     cantidad_likes: {
         type: Number
+
     }
     
     ,
     id_pregunta: [{
+        required: true,
         type: mongoose.Schema.Types.ObjectId,
         ref: "pregunta"
     }]
