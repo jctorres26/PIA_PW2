@@ -11,15 +11,19 @@ const RespuestaSchema = mongoose.Schema({
         type: Date
     },
    
-    id_usuario: [{
+    id_usuario: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "usuario"
-    }]
+    }
     ,
-    id_pregunta: [{
+    id_pregunta: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "pregunta"
-    }]
+    },
+    id_usuario_pregunta: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "usuario"
+    }
 });
 
 const Respuesta = mongoose.model("respuesta", RespuestaSchema, "respuesta");

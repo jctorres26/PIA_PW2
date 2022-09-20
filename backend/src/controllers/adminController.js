@@ -13,9 +13,13 @@ exports.admin_create = async (req, res) => {
   });
 };
 
-exports.admin_get = async (req, res) => {
-  res.send({
-    message: "get admin",
-  });
+exports.admin_login= async (req, res) => {
+
+  const {body: {user, pass}} = req;
+
+  const data = await Admin.findOne({usuario: user, password: pass});
+
+  res.send(data);
+  
 };
 

@@ -9,10 +9,10 @@ const Categorias_mas_preguntasSchema = mongoose.Schema({
     }
     
     ,
-    id_categoria: [{
+    id_categoria: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "categoria"
-    }]
+    }
 });
 
 const Categorias_mas_preguntas = mongoose.model("categorias_mas_preguntas", Categorias_mas_preguntasSchema, "categorias_mas_preguntas");

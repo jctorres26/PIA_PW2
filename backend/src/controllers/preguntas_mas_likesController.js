@@ -1,4 +1,6 @@
 const Preguntas_mas_likes = require("../models/preguntas_mas_likesSchema");
+const Pregunta = require("../models/preguntaSchema");
+const Likes = require("../models/likeSchema");
 
 exports.preguntas_mas_likes_create = async (req, res) => {
   const { body: preguntas_mas_likes } = req;
@@ -13,10 +15,25 @@ exports.preguntas_mas_likes_create = async (req, res) => {
   });
 };
 
+exports.preguntas_mas_likes_update = async (req, res) => {
+  
+
+  const{params: {id}} = req;
+
+  var count = await Likes.count({id_pregunta:id});
+
+  const data = await Preguntas_mas_likes.findOneAndUpdate({id_pregunta: id}, {cantidad_likes: count});
+
+  res.send(data);
+};
+
 exports.preguntas_mas_likes_get = async (req, res) => {
-  res.send({
-    message: "get preguntas_mas_likes",
-  });
+
+  const data = await Preguntas_mas_likes.find().populate("id_pregunta");
+
+  res.send(data);
+ 
+
 };
 
 //preguntas_mas_likes

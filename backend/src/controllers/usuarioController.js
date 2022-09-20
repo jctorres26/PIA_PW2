@@ -13,9 +13,12 @@ exports.usuario_create = async (req, res) => {
   });
 };
 
-exports.usuario_get = async (req, res) => {
-  res.send({
-    message: "get usuario",
-  });
-};
+exports.usuario_login= async (req, res) => {
 
+  const {body: {user, pass}} = req;
+
+  const data = await Usuario.findOne({usuario: user, password: pass});
+
+  res.send(data);
+  
+};

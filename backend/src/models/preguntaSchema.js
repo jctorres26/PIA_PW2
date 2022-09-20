@@ -11,7 +11,8 @@ const PreguntaSchema = mongoose.Schema({
         type: Boolean
     },
     fecha_publicacion: {
-        type: Date
+        type: Date,
+        default: Date.now
     },
    
     cantidad_likes: {
@@ -22,15 +23,15 @@ const PreguntaSchema = mongoose.Schema({
         type: Number
     }
     ,
-    id_usuario: [{
+    id_usuario: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "usuario"
-    }]
+    }
     ,
-    id_categoria: [{
+    id_categoria: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "categoria"
-    }]
+    }
 });
 
 const Pregunta = mongoose.model("pregunta", PreguntaSchema, "pregunta");

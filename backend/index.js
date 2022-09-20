@@ -4,7 +4,6 @@ const app = express();
 const port = 3000;
 require('./src/models/connection');
 
-const student_router = require('./src/routes/studentRouter');
 const admin_router = require('./src/routes/adminRouter');
 const usuario_router = require('./src/routes/usuarioRouter');
 const pregunta_router = require('./src/routes/preguntaRouter');
@@ -14,6 +13,7 @@ const like_router = require('./src/routes/likeRouter');
 const dislike_router = require('./src/routes/dislikeRouter');
 const favorito_router = require('./src/routes/favoritoRouter');
 const preguntas_mas_likes_router = require('./src/routes/preguntas_mas_likesRouter');
+const preguntas_mas_dislikes_router = require('./src/routes/preguntas_mas_dislikesRouter');
 const categorias_mas_preguntas_router = require('./src/routes/categorias_mas_preguntasRouter');
 const mes_mas_registros_router = require('./src/routes/mes_mas_registrosRouter');
 const mesmaspreguntas_router = require('./src/routes/mes_mas_preguntasRouter');
@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
     res.send("Api is siuuuuuuuuuuuu");
 }); 
 
-app.use('/api',student_router);
+
 app.use('/api',admin_router);
 app.use('/api',usuario_router);
 app.use('/api',pregunta_router);
@@ -36,6 +36,7 @@ app.use('/api',preguntas_mas_likes_router);
 app.use('/api',categorias_mas_preguntas_router);
 app.use('/api',mes_mas_registros_router);
 app.use('/api',mesmaspreguntas_router);
+app.use('/api',preguntas_mas_dislikes_router);
 
 app.listen(port, () => {
     console.log(`La aplicación se está ejecutando en el puerto: ${port}`)
