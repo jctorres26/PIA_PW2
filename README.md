@@ -18,3 +18,5 @@ https://github.com/jctorres26/PIA_PW2
 ## Descripcion:
 Nuestra aplicacion web es un sitio donde la gente puede dejar sus preguntas de forma anonima sobre el tema que deseen, esperando respuesta
 de cualquier usuario regristrado y adentrarse en nuevas opiniones, conocimientos y ayudas entre la comunidad.  
+Dentro de la carpeta backend se encontraran todos los archivos pertinentes al backend de nuestro proyecto. 
+Y en la carpeta src estan las carpetas que contienen los controllers, modelos, y rutas de la aplicacion.
