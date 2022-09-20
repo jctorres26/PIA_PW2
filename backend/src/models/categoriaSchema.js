@@ -4,7 +4,7 @@ const CategoriaSchema = mongoose.Schema({
     descripcion: {
         type: String,
         required: true,
-        minlength: 10,
+        minlength: 5,
         maxLength:500,
     }
 });

@@ -16,17 +16,22 @@ const RespuestaSchema = mongoose.Schema({
         required: true,
     },
    
-    id_usuario: [{
+    id_usuario: {
         required: true,
         type: mongoose.Schema.Types.ObjectId,
         ref: "usuario"
-    }]
+    }
     ,
-    id_pregunta: [{
+    id_pregunta: {
         required: true,
         type: mongoose.Schema.Types.ObjectId,
         ref: "pregunta"
-    }]
+    },
+    id_usuario_pregunta: {
+        required: true,
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "usuario"
+    }
 });
 
 const Respuesta = mongoose.model("respuesta", RespuestaSchema, "respuesta");

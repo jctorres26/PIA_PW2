@@ -17,7 +17,7 @@ exports.usuario_login= async (req, res) => {
 
   const {body: {user, pass}} = req;
 
-  const data = await Usuario.findOne({usuario: user, password: pass});
+  const data = await Usuario.findOne({usuario: user, password: pass}).catch((err) => console.log(err));
 
   res.send(data);
   

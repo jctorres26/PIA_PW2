@@ -22,14 +22,14 @@ exports.preguntas_mas_likes_update = async (req, res) => {
 
   var count = await Likes.count({id_pregunta:id});
 
-  const data = await Preguntas_mas_likes.findOneAndUpdate({id_pregunta: id}, {cantidad_likes: count});
+  const data = await Preguntas_mas_likes.findOneAndUpdate({id_pregunta: id}, {cantidad_likes: count}).catch((err) => console.log(err));
 
   res.send(data);
 };
 
 exports.preguntas_mas_likes_get = async (req, res) => {
 
-  const data = await Preguntas_mas_likes.find().populate("id_pregunta");
+  const data = await Preguntas_mas_likes.find().populate("id_pregunta").catch((err) => console.log(err));
 
   res.send(data);
  

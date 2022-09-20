@@ -8,17 +8,17 @@ const FavoritoSchema = mongoose.Schema({
 
     },
    
-    id_usuario: [{
+    id_usuario: {
         required: true,
         type: mongoose.Schema.Types.ObjectId,
         ref: "usuario"
-    }]
+    }
     ,
-    id_pregunta: [{
+    id_pregunta: {
         required: true,
         type: mongoose.Schema.Types.ObjectId,
         ref: "pregunta"
-    }]
+    }
 });
 
 const Favorito = mongoose.model("favorita", FavoritoSchema, "favorita");

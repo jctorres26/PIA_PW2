@@ -22,14 +22,14 @@ exports.preguntas_mas_dislikes_update = async (req, res) => {
 
   var count = await Dislikes.count({id_pregunta:id});
 
-  const data = await Preguntas_mas_dislikes.findOneAndUpdate({id_pregunta: id}, {cantidad_dislikes: count});
+  const data = await Preguntas_mas_dislikes.findOneAndUpdate({id_pregunta: id}, {cantidad_dislikes: count}).catch((err) => console.log(err));
 
   res.send(data);
 };
 
 exports.preguntas_mas_dislikes_get = async (req, res) => {
 
-  const data = await Preguntas_mas_dislikes.find().populate("id_pregunta");
+  const data = await Preguntas_mas_dislikes.find().populate("id_pregunta").catch((err) => console.log(err));
 
   res.send(data);
  

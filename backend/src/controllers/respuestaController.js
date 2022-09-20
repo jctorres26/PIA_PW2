@@ -22,7 +22,7 @@ exports.respuesta_create = async (req, res) => {
 
 exports.respuesta_get = async (req, res) => {
 
-  const data = await Respuesta.find({aceptada: true}).populate("id_pregunta");
+  const data = await Respuesta.find({aceptada: true}).populate("id_pregunta").catch((err) => console.log(err));
   res.send(data);
   
 };
@@ -34,7 +34,7 @@ exports.respuesta_getByUserId = async (req, res) => {
   const data = await Respuesta.find({aceptada: true, id_usuario_pregunta: id}).populate({
     path: "id_pregunta",
     match: {id_usuario: id}
-  });
+  }).catch((err) => console.log(err));
 
   
   res.send(data);
@@ -45,7 +45,7 @@ exports.respuesta_accept = async (req, res) => {
 
   const{params: {id},} = req;
 
-  const data = await Respuesta.findByIdAndUpdate(id,{"aceptada":true}).populate("id_pregunta");
+  const data = await Respuesta.findByIdAndUpdate(id,{"aceptada":true}).populate("id_pregunta").catch((err) => console.log(err));
   res.send(data);
   
 
@@ -56,9 +56,9 @@ exports.respuesta_decline = async (req, res) => {
 
   const{params: {id},} = req;
 
-  var data = await Respuesta.findByIdAndUpdate(id,{"aceptada":false}).populate("id_pregunta");
-  await Respuesta.findByIdAndDelete(id);
-   await Pregunta.findByIdAndUpdate(data.id_pregunta._id,{"respondida":false});
+    var data = await Respuesta.findByIdAndUpdate(id,{"aceptada":false}).populate("id_pregunta").catch((err) => console.log(err));
+    await Respuesta.findByIdAndDelete(id).catch((err) => console.log(err));
+    await Pregunta.findByIdAndUpdate(data.id_pregunta._id,{"respondida":false}).catch((err) => console.log(err));
 
   res.send(data);
   

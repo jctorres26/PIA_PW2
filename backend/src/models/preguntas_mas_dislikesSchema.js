@@ -4,11 +4,13 @@ const mongoose = require('mongoose');
 const Preguntas_mas_dislikesSchema = mongoose.Schema({
 
     cantidad_dislikes: {
+        required:true,
         type: Number
     }
     
     ,
     id_pregunta: {
+        required:true,
         type: mongoose.Schema.Types.ObjectId,
         ref: "pregunta"
     }

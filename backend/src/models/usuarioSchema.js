@@ -10,13 +10,17 @@ const usuarioSchema = mongoose.Schema({
     },
 
     usuario:{
-        type: String
+        type: String,
+        required: true,
+        maxLength: 20,
+        minLength: 6,
+        unique: true
     },
     password: {
         type: String,
         required: true,
         maxLength: 40,
-        minLength: 4,
+        minLength: 8,
         unique: true
     }
     ,

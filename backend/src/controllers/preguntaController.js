@@ -22,7 +22,7 @@ exports.pregunta_getRandom = async (req, res) => {
   console.log(size);
  
 
-  const data = await Pregunta.findOne({respondida:false}).skip(random).populate("id_categoria");
+  const data = await Pregunta.findOne({respondida:false}).skip(random).populate("id_categoria").catch((err) => console.log(err));
 
   res.send(data);
 };
@@ -32,7 +32,7 @@ exports.pregunta_getByUserId = async (req, res) => {
   const{params: {id}} = req;
  
 
-  const data = await Pregunta.find({respondida:false, id_usuario: id});
+  const data = await Pregunta.find({respondida:false, id_usuario: id}).catch((err) => console.log(err));
 
   res.send(data);
 };

@@ -20,29 +20,19 @@ const PreguntaSchema = mongoose.Schema({
     fecha_publicacion: {
         type: Date,
         required: true
-    },
-   
-    cantidad_likes: {
-        type: Number,
-        minlength: 0,
     }
     ,
-    cantidad_dislikes: {
-        type: Number,
-        minlength: 0,
-    }
-    ,
-    id_usuario: [{
+    id_usuario: {
         required: true,
         type: mongoose.Schema.Types.ObjectId,
         ref: "usuario"
-    }]
+    }
     ,
-    id_categoria: [{
+    id_categoria: {
         required: true,
         type: mongoose.Schema.Types.ObjectId,
         ref: "categoria"
-    }]
+    }
 });
 
 const Pregunta = mongoose.model("pregunta", PreguntaSchema, "pregunta");

@@ -4,13 +4,13 @@ const AdminSchema = mongoose.Schema({
     usuario: {
         type: String,
         required: true,
-        minlength: 3,
+        minlength: 4,
         maxLength:20,
     },
     password: {
         type: String,
         required: true,
-        minlength: 3,
+        minlength: 8,
         maxLength:20,
     }
 });

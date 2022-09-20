@@ -24,14 +24,14 @@ exports.categorias_mas_preguntas_update = async (req, res) => {
 
   var count = await Pregunta.count({id_categoria:id});
 
-  const data = await Categorias_mas_preguntas.findOneAndUpdate({id_categoria: id}, {cantidad_preguntas: count});
+  const data = await Categorias_mas_preguntas.findOneAndUpdate({id_categoria: id}, {cantidad_preguntas: count}).catch((err) => console.log(err));
 
   res.send(data);
 };
 
 exports.categorias_mas_preguntas_get = async (req, res) => {
 
-  const data = await Categorias_mas_preguntas.find().populate("id_categoria");
+  const data = await Categorias_mas_preguntas.find().populate("id_categoria").catch((err) => console.log(err));
 
   res.send(data);
  
