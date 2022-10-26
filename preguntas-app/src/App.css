@@ -1,0 +1,86 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+section {
+  color: #D49B54;
+  text-shadow: #36082D ;
+  background-color: #2A2550;
+  /* height: 100vh;   */
+  margin: 0 auto;
+  /* max-width: 3000px;
+  max-height: 1000px; */
+}
+.navBg {
+  background-color: #251D3A
+  ;
+}
+.Button {
+  padding-top: 10px;
+  
+  color: #C74B50;
+}
+.Form-log {
+  background-color: #8BBCCC;
+  color: #C74B50;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  line-height: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  border-radius: 15px;
+  font-weight: 600;
+  font-size: 150%;
+}
+.hijo {
+  padding-top: 100px;
+  padding-bottom: 500px;
+  line-height: 100px; 
+}
+.textarea {
+  color: #C74B50;
+  background-color: #DBF6E9;
+  border-radius: 25px;
+  border-color: #FFC93C;
+  width: 70%;
+  height: 30%;
+}
